@@ -1,7 +1,7 @@
 import StripeCheckout from './StripeCheckout.vue';
 import Bus from './bus';
 
-const VueStripe = {
+var VueStripe = {
     Bus,
     StripeCheckout
 };
