@@ -75,11 +75,8 @@
 
             this.injectCheckoutScript()
                     .then(() => this.configureStripe())
+                    .then(() => window.addEventListener('popstate', function () { this.stripe.close(); }.bind(this)))
                     .catch(e => console.error(e));
-
-            window.addEventListener('popstate', function () {
-                this.stripe.close();
-            });
         },
         methods: {
             selectedProduct()  {
